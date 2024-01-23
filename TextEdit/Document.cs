@@ -90,6 +90,14 @@ public class Document
         }
     }
 
+    public void DeleteLine(int line)
+    {
+        if (line < 0 || line >= lines.Count)
+            return;
+
+        lines.RemoveAt(line);
+    }
+
     public void Indent(int line)
     {
         lines[line] = "    " + lines[line];

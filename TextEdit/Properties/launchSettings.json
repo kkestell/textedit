@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TextEdit": {
+      "commandName": "Project",
+      "commandLineArgs": "D:\\src\\TextEdit\\TextEdit\\Editor.cs"
+    }
+  }
+}

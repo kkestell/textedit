@@ -15,7 +15,7 @@ public class DocumentTests
     [Test]
     public void Constructor_Stream()
     {
-        using var stream = new MemoryStream(Encoding.UTF8.GetBytes("line1\nline2"));
+        using var stream = new MemoryStream("line1\nline2"u8.ToArray());
         var doc = new Document(stream);
         Assert.That(doc.GetText(), Is.EqualTo("line1\nline2"));
     }

@@ -4,13 +4,10 @@ namespace TextEdit;
 
 class ConsoleRenderer : IDisposable
 {
-    private readonly View _view;
     private readonly Stream _stdout;
 
-    public ConsoleRenderer(View view)
+    public ConsoleRenderer()
     {
-        _view = view;
-
         Console.OutputEncoding = Encoding.UTF8;
         Console.CursorVisible = false;
 
@@ -24,9 +21,9 @@ class ConsoleRenderer : IDisposable
         _stdout.Dispose();
     }
 
-    public void Render()
+    public void Render(View view)
     {
         Console.Clear();
-        _view.Render(_stdout);
+        view.Render(_stdout);
     }
 }

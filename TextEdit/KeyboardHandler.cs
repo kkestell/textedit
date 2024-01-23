@@ -78,6 +78,12 @@ class KeyboardHandler
                 case ConsoleKey.LeftArrow:
                     _editor.Command(EditorCommand.MoveToPreviousWord);
                     break;
+                case ConsoleKey.Home:
+                    _editor.Command(EditorCommand.MoveToStartOfDocument);
+                    break;
+                case ConsoleKey.End:
+                    _editor.Command(EditorCommand.MoveToEndOfDocument);
+                    break;
             }
         }
         else if (keyInfo.Modifiers == ConsoleModifiers.Shift)
@@ -98,6 +104,9 @@ class KeyboardHandler
                     break;
                 case ConsoleKey.Tab:
                     _editor.Command(EditorCommand.Unindent);
+                    break;
+                case ConsoleKey.Delete:
+                    _editor.Command(EditorCommand.DeleteLine);
                     break;
                 default:
                     var ch = keyInfo.KeyChar;

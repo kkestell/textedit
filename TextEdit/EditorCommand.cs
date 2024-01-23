@@ -39,6 +39,7 @@ enum EditorCommand
     MoveToEndOfDocument,
     DeletePreviousCharacter,
     DeleteNextCharacter,
+    DeleteLine,
     InsertCharacter,
     ToggleInsertMode,
     Indent,
